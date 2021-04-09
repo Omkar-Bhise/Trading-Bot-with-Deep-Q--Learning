@@ -25,16 +25,16 @@ Dataset:
 Deep Q-Learning :This dataset will be used for Trading bot training. Which will be extracted from proprietary data sources like Alpaca Stock Brokerage. Data extracted from Alpaca Stock Brokerage will contain column as following 
 	
 	Timestamp : Date and time one which following data is being collected for that stock.
-   Open : Opening value of stock for that particular timestamp.
-   High:  Highest stock value for that particular timestamp.
-   Low: Lowest stock value for that particular timestamp.
-   Close: Closing value of stock for that particular timestamp
-   Volume: Volume of trades happening of stock for that particular timestamp.
+	Open : Opening value of stock for that particular timestamp.
+	High:  Highest stock value for that particular timestamp.
+	Low: Lowest stock value for that particular timestamp.
+	Close: Closing value of stock for that particular timestamp
+	Volume: Volume of trades happening of stock for that particular timestamp.
 
 NLP : Sentiment140 training Data. The Input data contains sentiments in form of 0-Negative 2-Neutral and 4-Positive.We will convert these to 0,0.5 and 1.We will be using below 2 data Labels:
    
 	Timestamp: Timestamp when the tweet was tweeted
-   Tweet : The actual tweet which we will analyze
+   	Tweet : The actual tweet which we will analyze
 
 Model :
    TradingBot:
@@ -54,14 +54,14 @@ Model :
 
 Project Outcome:
 
-We intend to create a trading bot based on Deep Q-Learning with intended profit as output. Along with input signals containing stock data, we also intend to create an additional input signal to this bot which uses an NLP based sentiment analysis model.This model uses new data(twitter, etc.) to calculate sentiments for a particular stock for that timestamp and hence assist our trading bot in better outputs.
+	We intend to create a trading bot based on Deep Q-Learning with intended profit as output. Along with input signals containing stock data, we also intend to create an additional input signal to this bot which uses an NLP based sentiment analysis model.This model uses new data(twitter, etc.) to calculate sentiments for a particular stock for that timestamp and hence assist our trading bot in better outputs.
 
 Challenges:
 
-Current model is considering the entire portfolio for that particular stock which is not an ideal way for trading bot to work. For best action, bot should be considering the percentage of portfolio that should be considered for action space. For example, if someone has 10000$ in stock of apple it should be able to sell the most optimized amount of that stock. 
+	Current model is considering the entire portfolio for that particular stock which is not an ideal way for trading bot to work. For best action, bot should be considering the percentage of portfolio that should be considered for action space. For example, if someone has 10000$ in stock of apple it should be able to sell the most optimized amount of that stock. 
 
-Reward function engineering is another problem, since we are only rewarding trading bot for profit but not punishing him for losses. Therefore, some sort of reward function engineering is required.
+	Reward function engineering is another problem, since we are only rewarding trading bot for profit but not punishing him for losses. Therefore, some sort of reward function engineering is required.
 
-Even Though, we have done some testing we are still not understanding which neural network we should use for Q value approximation. 
+	Even Though, we have done some testing we are still not understanding which neural network we should use for Q value approximation. 
 
-Feature engineering we are only considering signals provided by proprietary API of Alpaca.However, more signals generation can be done with given signals. Additionally, We can consider more external signals like sentiment signals.    
+	Feature engineering we are only considering signals provided by proprietary API of Alpaca.However, more signals generation can be done with given signals. Additionally, We can consider more external signals like sentiment signals.    
