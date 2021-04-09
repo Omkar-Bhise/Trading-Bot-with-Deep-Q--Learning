@@ -37,14 +37,15 @@ NLP : Sentiment140 training Data. The Input data contains sentiments in form of 
    	Tweet : The actual tweet which we will analyze
 
 Model :
-   TradingBot:
+
+TradingBot:
 
 		Implementation: Model will take the current state of the environment (from the observation space) as input, and predict as output an action from the action space. We want the AI to initially explore the action space. Because Q value will be compared with probability epsilon, AI will choose a random action from the action space, not the best action from the action space. As Q value starts improving it will start to choose better action from action space. It's called the act method , and its epsilon greedy learning. The rest of the time it picks the network’s best predicted action, simply by current state through the network to predict the best next action.
 		Model Description : Double Deep Q Learning (ANN / LSTM), Deep Q Learning(ANN / LSTM)
 		Input: Open, High, Low, Close, Volume, Sentiment
 		Output: Action(Buy, Sell, Hold)
 
-	NLP:
+NLP:
 	
 		Implementation : We will firstly use word2vec embedding to convert text data to numerical data. This data will be fed to Deep Neural Network models. We will use crossEntropy loss in both the models. We will then choose the best performing model based on accuracy and F1 score.
 		Model : Text CNN Model for multiclass classification , Multiclass classification using BERT model
@@ -54,14 +55,14 @@ Model :
 
 Project Outcome:
 
-	We intend to create a trading bot based on Deep Q-Learning with intended profit as output. Along with input signals containing stock data, we also intend to create an additional input signal to this bot which uses an NLP based sentiment analysis model.This model uses new data(twitter, etc.) to calculate sentiments for a particular stock for that timestamp and hence assist our trading bot in better outputs.
+We intend to create a trading bot based on Deep Q-Learning with intended profit as output. Along with input signals containing stock data, we also intend to create an additional input signal to this bot which uses an NLP based sentiment analysis model.This model uses new data(twitter, etc.) to calculate sentiments for a particular stock for that timestamp and hence assist our trading bot in better outputs.
 
 Challenges:
 
-	Current model is considering the entire portfolio for that particular stock which is not an ideal way for trading bot to work. For best action, bot should be considering the percentage of portfolio that should be considered for action space. For example, if someone has 10000$ in stock of apple it should be able to sell the most optimized amount of that stock. 
+1. Current model is considering the entire portfolio for that particular stock which is not an ideal way for trading bot to work. For best action, bot should be considering the percentage of portfolio that should be considered for action space. For example, if someone has 10000$ in stock of apple it should be able to sell the most optimized amount of that stock. 
 
-	Reward function engineering is another problem, since we are only rewarding trading bot for profit but not punishing him for losses. Therefore, some sort of reward function engineering is required.
+2. Reward function engineering is another problem, since we are only rewarding trading bot for profit but not punishing him for losses. Therefore, some sort of reward function engineering is required.
 
-	Even Though, we have done some testing we are still not understanding which neural network we should use for Q value approximation. 
+3. Even Though, we have done some testing we are still not understanding which neural network we should use for Q value approximation. 
 
-	Feature engineering we are only considering signals provided by proprietary API of Alpaca.However, more signals generation can be done with given signals. Additionally, We can consider more external signals like sentiment signals.    
+4. Feature engineering we are only considering signals provided by proprietary API of Alpaca.However, more signals generation can be done with given signals. Additionally, We can consider more external signals like sentiment signals.    
