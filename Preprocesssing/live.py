@@ -25,7 +25,7 @@ stream = Stream('PKTEIXKKZSEUW0APR22K',
 
 # subscribing to event
 stream.subscribe_bars(bar_callback, 'AAPL')
-stream.subscribe_bars(bar_callback, 'TSLA')
+#stream.subscribe_bars(bar_callback, 'TSLA')
 #stream.subscribe_quotes(quote_callback, 'IBM')
 
 stream.run()
