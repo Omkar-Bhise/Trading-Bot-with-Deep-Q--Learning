@@ -1,3 +1,10 @@
+"""
+Created on Fri Apr  9 14:40:43 2021
+
+@author: omkar
+"""
+
+
 from alpaca_trade_api.rest import REST
 
 import alpaca_trade_api as tradeapi

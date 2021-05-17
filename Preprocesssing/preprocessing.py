@@ -1,9 +1,16 @@
+"""
+Created on Fri Apr  9 14:40:43 2021
+
+@author: omkar
+"""
+
+
 from alpaca_trade_api.rest import REST
 
 import alpaca_trade_api as tradeapi
 
 
-def load_stock_data():
+def load_train_data():
     api = REST('PKTEIXKKZSEUW0APR22K', 'IeTuFkW6mIrPYYUv69RMcB7LYDzlOkop5hc2df5H',
                base_url='https://paper-api.alpaca.markets', )
 
@@ -15,7 +22,7 @@ def load_stock_data():
     return (data)
 
 
-def test_stock_data():
+def load_test_data():
     api = REST('PKTEIXKKZSEUW0APR22K', 'IeTuFkW6mIrPYYUv69RMcB7LYDzlOkop5hc2df5H',
                base_url='https://paper-api.alpaca.markets', )
 
