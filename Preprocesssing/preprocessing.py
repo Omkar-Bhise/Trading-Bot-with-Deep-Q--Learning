@@ -6,7 +6,7 @@ Created on Fri Apr  9 14:40:43 2021
 
 
 from alpaca_trade_api.rest import REST
-
+import pandas as pd
 import alpaca_trade_api as tradeapi
 
 
@@ -18,7 +18,10 @@ def load_train_data():
 
     data = api.get_bars("TSLA", tradeapi.rest.TimeFrame.Day, "2016-04-23", "2020-03-01", adjustment='raw').df
     data.index.rename("Date")
-
+    strt_date = datetime.strptime("2016-04-23", "%Y-%m-%d")
+    end_date = datetime.strptime("2020-03-01", "%Y-%m-%d")
+    nlp_df = pd.read_csv("sentiment.csv")
+    data["sentiment"] = nlp_df[nlp_df["Datetime"]>strt_date & nlp_df["Datetime"]<end_date]["Tesla"]
     return (data)
 
 
